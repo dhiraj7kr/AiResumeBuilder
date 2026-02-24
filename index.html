@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-One | AI Portfolio Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <div class="ui-layer">
+        <div class="container">
+            <header class="glass-card input-hero">
+                <h1 class="glitch-text">AI ARCHITECT <span class="accent-text">2.0</span></h1>
+                <p class="subtitle">Synthesizing professional identity from global code patterns</p>
+                
+                <div class="input-group">
+                    <input type="text" id="targetUser" placeholder="Enter GitHub Username">
+                    <button class="btn-primary" onclick="initiateAIBuild()">BUILD PROFILE</button>
+                </div>
+                <div id="terminal" class="terminal"></div>
+            </header>
+
+            <main id="portfolio-root" class="hidden">
+                <aside class="sidebar">
+                    <div id="profileCard" class="glass-card center-align">
+                        <div class="avatar-wrapper">
+                            <img id="avatar" src="" alt="Avatar">
+                        </div>
+                        <h2 id="fullName"></h2>
+                        <p id="headline" class="accent-label"></p>
+                        <div id="socialLinks" class="social-grid"></div>
+                    </div>
+
+                    <div id="skillCard" class="glass-card">
+                        <h3>Tech Stack</h3>
+                        <div id="skills" class="chip-container"></div>
+                    </div>
+                </aside>
+
+                <div class="main-body">
+                    <div id="aboutCard" class="glass-card">
+                        <h3><i data-lucide="cpu"></i> AI Generated Summary</h3>
+                        <div id="aiSummary" class="narrative-text"></div>
+                    </div>
+
+                    <div id="repoCard" class="glass-card">
+                        <h3><i data-lucide="code"></i> Featured Intelligence</h3>
+                        <div id="repos" class="repo-grid"></div>
+                    </div>
+                    
+                    <button onclick="window.print()" class="btn-export">
+                        <i data-lucide="download"></i> DOWNLOAD OFFICIAL DOSSIER
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
