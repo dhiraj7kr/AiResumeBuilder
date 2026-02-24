@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D-One | AI Portfolio Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>D-One | AI Portfolio Architect</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,48 +13,59 @@
 
     <div class="ui-layer">
         <div class="container">
-            <header class="glass-card input-hero">
-                <h1 class="glitch-text">AI ARCHITECT <span class="accent-text">2.0</span></h1>
-                <p class="subtitle">Synthesizing professional identity from global code patterns</p>
+            <header class="glass-card hero-section">
+                <div class="badge">v2.4 Stable Build</div>
+                <h1 class="title">D-ONE <span class="gradient-text">INTELLIGENCE</span></h1>
+                <p class="description">Autonomous portfolio synthesis from the global code mesh.</p>
                 
-                <div class="input-group">
-                    <input type="text" id="targetUser" placeholder="Enter GitHub Username">
-                    <button class="btn-primary" onclick="initiateAIBuild()">BUILD PROFILE</button>
+                <div class="input-container">
+                    <input type="text" id="targetUser" placeholder="Enter GitHub Identity..." autocomplete="off">
+                    <button class="btn-glow" onclick="initiateSynthesis()">
+                        <span class="btn-text">SYNTHESIZE</span>
+                    </button>
                 </div>
-                <div id="terminal" class="terminal"></div>
+                <div id="status-terminal" class="terminal-box"></div>
             </header>
 
-            <main id="portfolio-root" class="hidden">
-                <aside class="sidebar">
-                    <div id="profileCard" class="glass-card center-align">
-                        <div class="avatar-wrapper">
-                            <img id="avatar" src="" alt="Avatar">
-                        </div>
-                        <h2 id="fullName"></h2>
-                        <p id="headline" class="accent-label"></p>
-                        <div id="socialLinks" class="social-grid"></div>
-                    </div>
+            <main id="portfolio-root" class="hidden-root">
+                <div class="dashboard-grid">
+                    <aside class="sidebar-column">
+                        <section id="profileCard" class="glass-card profile-info">
+                            <div class="avatar-frame">
+                                <img id="avatar" src="" alt="Identity">
+                            </div>
+                            <h2 id="fullName"></h2>
+                            <p id="headline" class="status-badge"></p>
+                            <div id="socialLinks" class="link-stack"></div>
+                        </section>
 
-                    <div id="skillCard" class="glass-card">
-                        <h3>Tech Stack</h3>
-                        <div id="skills" class="chip-container"></div>
-                    </div>
-                </aside>
+                        <section id="skillCard" class="glass-card">
+                            <h3><i data-lucide="zap"></i> Technical Matrix</h3>
+                            <div id="skills" class="tag-cloud"></div>
+                        </section>
+                    </aside>
 
-                <div class="main-body">
-                    <div id="aboutCard" class="glass-card">
-                        <h3><i data-lucide="cpu"></i> AI Generated Summary</h3>
-                        <div id="aiSummary" class="narrative-text"></div>
-                    </div>
+                    <div class="content-column">
+                        <section id="aboutCard" class="glass-card">
+                            <div class="card-header">
+                                <i data-lucide="cpu"></i>
+                                <h3>AI Executive Summary</h3>
+                            </div>
+                            <div id="aiSummary" class="summary-text"></div>
+                        </section>
 
-                    <div id="repoCard" class="glass-card">
-                        <h3><i data-lucide="code"></i> Featured Intelligence</h3>
-                        <div id="repos" class="repo-grid"></div>
+                        <section id="repoCard" class="glass-card">
+                            <div class="card-header">
+                                <i data-lucide="layers"></i>
+                                <h3>Top-Tier Repositories</h3>
+                            </div>
+                            <div id="repos" class="project-grid"></div>
+                        </section>
+                        
+                        <button class="export-btn" onclick="window.print()">
+                            <i data-lucide="file-text"></i> EXPORT DOSSIER (PDF)
+                        </button>
                     </div>
-                    
-                    <button onclick="window.print()" class="btn-export">
-                        <i data-lucide="download"></i> DOWNLOAD OFFICIAL DOSSIER
-                    </button>
                 </div>
             </main>
         </div>
